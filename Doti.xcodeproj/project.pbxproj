@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE3496C92AE92A47008920C9 /* ReadeMe.md in Resources */ = {isa = PBXBuildFile; fileRef = EE3496C82AE92A47008920C9 /* ReadeMe.md */; };
 		EE6090542AE81605009B8BB6 /* DotiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6090532AE81605009B8BB6 /* DotiApp.swift */; };
 		EE6090562AE81605009B8BB6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6090552AE81605009B8BB6 /* ContentView.swift */; };
 		EE6090582AE8160C009B8BB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE6090572AE8160C009B8BB6 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE3496C82AE92A47008920C9 /* ReadeMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadeMe.md; sourceTree = "<group>"; };
 		EE6090502AE81605009B8BB6 /* Doti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE6090532AE81605009B8BB6 /* DotiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotiApp.swift; sourceTree = "<group>"; };
 		EE6090552AE81605009B8BB6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -35,6 +37,7 @@
 		EE6090472AE81605009B8BB6 = {
 			isa = PBXGroup;
 			children = (
+				EE3496C82AE92A47008920C9 /* ReadeMe.md */,
 				EE6090522AE81605009B8BB6 /* Doti */,
 				EE6090512AE81605009B8BB6 /* Products */,
 			);
@@ -127,6 +130,7 @@
 			files = (
 				EE60905B2AE8160C009B8BB6 /* Preview Assets.xcassets in Resources */,
 				EE6090582AE8160C009B8BB6 /* Assets.xcassets in Resources */,
+				EE3496C92AE92A47008920C9 /* ReadeMe.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
