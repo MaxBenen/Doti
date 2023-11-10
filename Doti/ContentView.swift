@@ -11,46 +11,58 @@ struct ContentView: View {
     
     @State var TextfieldText: String = ""
     @State var showAlert: Bool = false
-    @State var dataArray: [String] = []
+    //@State var dataArray: [String] = []
+    @State var checkBox: Bool = true
+    var toDoList:[(name:String,checked:Bool)] = []
+    
+    
+    
 
     var body: some View {
         
-
-//            TextField("Type your todo", text: $TextfieldText)
-//            .textFieldStyle(RoundedBorderTextFieldStyle())
-//            .padding()
-//            .background(Color.gray .opacity(0.2).cornerRadius(10))
-//            .padding(30)
-        
-        Button("Add"){//Centerd in right corner
-            showAlert = true
-        }
-        Spacer()
-        
-        
-        .alert("Add to do", isPresented: $showAlert){
-            TextField(TextfieldText, text: $TextfieldText)
-            Button("Save",action: {})//Action apppend to list and show on screen vertical stacked
-            Button("Cancel",action: {})//Close alert
-        }
-        
-//        .alert(isPresented: $showAlert, content: {
-//            Alert(
-//                title: Text("Add your todo"),
-//                primaryButton: .default(Text("Add")),
-//                //call action like normal button
-//                secondaryButton: .destructive(Text("Cancel")))
-//           
-//        })
+                
+                
+            
+                
+                Button("Add"){
+                    showAlert = true
+                }
         
 
+                .alert("Add to do", isPresented: $showAlert){
+                    
+                    TextField(TextfieldText, text: $TextfieldText)
+                    
+                    Button("Save",action: {saveToDo() })//Action apppend to list and show on screen vertical stacked
+                    Button("Cancel",action: {TextfieldText = ""})//Close alert
+                }
+            
+                
+            
+//            ForEach(dataArray, id: \.self){ data in
+//                
+//                    Toggle(data , isOn: $checkBox )
+//                    
+//    
+//            }// loop for saving todos
         
+      
+
+      
+            
     }//body
     
-    func saveText(){
-        dataArray.append(TextfieldText)
-        
-    }//end function save text 
+    func saveToDo(){
+        toDoList.append(TextfieldText)
+        TextfieldText = ""
+    }
+    
+//    func saveToDo(){
+//        dataArray.append(TextfieldText)
+//        TextfieldText = ""
+//        
+//    }//end function save text
+    
     
     
 }//contentview
