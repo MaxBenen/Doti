@@ -16,10 +16,6 @@ struct ContentView: View {
         toDoModel(toDoTitle: "Hello", ToDoDone: false),
         toDoModel(toDoTitle: "Nice", ToDoDone: true)]
     
-    @State var checkBox: Bool = true
-    
-    
-    
     struct toDoModel: Identifiable{
         let id: String = UUID().uuidString
         let toDoTitle: String
@@ -28,42 +24,21 @@ struct ContentView: View {
     
 
     var body: some View {
-        
-       
-
- 
-       
-        
-//                Button("Add"){
-//                    showAlert = true
-//                }
-//        
-//
-//                .alert("Add to do", isPresented: $showAlert){
-//                    
-//                    TextField(TextfieldText, text: $TextfieldText)
-//                    
-//                    Button("Save",action: { })//Action apppend to  list and show on screen vertical stacked
-//                    Button("Cancel",action: {TextfieldText = ""})//Close alert
-//                }
-   
-        
+     
         NavigationView{
- 
+            
             
             List{
                 
                 ForEach(dataArray){ data in
                     
-                    Text("byi")
+                    Text("hi")
                 }//end loop
-                
-                
+
                 .navigationTitle("Todo list")
-                
-               
-                
+       
             }// end list
+            
             
             .toolbar {
                 Button("Add") {
@@ -76,8 +51,9 @@ struct ContentView: View {
                     Button("Save",action: { })//Action apppend to  list and show on screen vertical stacked
                     Button("Cancel",action: {TextfieldText = ""})//Close alert
                 }
+                
             } //end toolbar
-
+            
         }//nav view
       
 
