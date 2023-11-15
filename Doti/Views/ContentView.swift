@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+
 struct ContentView: View {
     
     @State var TextfieldText: String = ""
@@ -16,27 +18,26 @@ struct ContentView: View {
         toDoModel(toDoTitle: "Hello", ToDoDone: false),
         toDoModel(toDoTitle: "Nice", ToDoDone: true)]
     
-    struct toDoModel: Identifiable{
-        let id: String = UUID().uuidString
-        let toDoTitle: String
-        let ToDoDone: Bool
-    }
-    
 
+    
+    
+    
+    
     var body: some View {
-     
+        
         NavigationView{
             
             
             List{
                 
+                
                 ForEach(dataArray){ data in
                     
-                    Text("hi")
+                    ListRowView(data: data)
                 }//end loop
-
+                
                 .navigationTitle("Todo list")
-       
+                
             }// end list
             
             
@@ -55,29 +56,18 @@ struct ContentView: View {
             } //end toolbar
             
         }//nav view
-      
-
-      
-            
+        
+        
+        
+        
     }//body
     
-//    func saveToDo(){
-//        toDoList.append ((name: "Anything",checked: true))
-//        TextfieldText = ""
-//    }
-  
     
+}
     
-//    func saveToDo(){
-//        dataArray.append(TextfieldText)
-//        TextfieldText = ""
-        
-    }//end function save text
-    
-    
-    
-//contentview
 
 #Preview {
     ContentView()
 }
+
+

@@ -7,11 +7,21 @@
 
 import SwiftUI
 
+/**
+MVVM Architecture
+MODEL - data point
+VIEW - UI
+VIEWMODEL- manges models for views 
+ 
+ */
+
 @main
 struct DotiApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            
+                ContentView()
+            
         }
     }
 }
