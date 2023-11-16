@@ -18,7 +18,7 @@ struct ContentView: View {
         toDoModel(toDoTitle: "Hello", ToDoDone: false),
         toDoModel(toDoTitle: "Nice", ToDoDone: true)]
     
-
+    
     
     
     
@@ -29,41 +29,45 @@ struct ContentView: View {
             
             
             List{
-                
-                
                 ForEach(dataArray){ data in
-                    
                     ListRowView(data: data)
-                }//end loop
-                
-                .navigationTitle("Todo list")
-                
+                }
+                .onDelete(perform: deleteToDo)
             }// end list
             
+            .navigationTitle("Todo list")
             
-            .toolbar {
-                Button("Add") {
-                    showAlert = true
-                }
-                .alert("Add to do", isPresented: $showAlert){
-                    
-                    TextField(TextfieldText, text: $TextfieldText)
-                    
-                    Button("Save",action: { })//Action apppend to  list and show on screen vertical stacked
-                    Button("Cancel",action: {TextfieldText = ""})//Close alert
-                }
+        }// end nav view
+        
+        
+        .toolbar {
+            Button("Add") {
+                showAlert = true
+            }
+            .alert("Add to do", isPresented: $showAlert){
                 
-            } //end toolbar
+                TextField(TextfieldText, text: $TextfieldText)
+                
+                Button("Save",action: { })//Action apppend to  list and show on screen vertical stacked
+                Button("Cancel",action: {TextfieldText = ""})//Close alert
+            }// end alert
             
-        }//nav view
+        } //end toolbar
+        
+    }//end body
+    
+    func deleteToDo (indexSet: IndexSet){
+        dataArray.remove(atOffsets: indexSet)
+    }
         
         
-        
-        
-    }//body
+    }//end
     
     
-}
+
+    
+    
+
     
 
 #Preview {
