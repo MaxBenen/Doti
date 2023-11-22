@@ -11,15 +11,10 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @Environment var listViewModel: ListViewModel
+    
     @State var TextfieldText: String = ""
     @State var showAlert: Bool = false
-    
-    @State var dataArray: [toDoModel] = [
-        toDoModel(toDoTitle: "Hello", ToDoDone: false),
-        toDoModel(toDoTitle: "Nice", ToDoDone: true)]
-    
-    
-    
     
     
     
@@ -29,21 +24,21 @@ struct ContentView: View {
             
             
             List{
-                ForEach(dataArray){ data in
+                ForEach(listViewModel.dataArray){ data in
                     ListRowView(data: data)
                 }
-                .onDelete(perform: deleteToDo)
+                .onDelete(perform: listViewModel.deleteToDo)
+                .onMove(perform: listViewModel.moveItem)
             }// end list
             
             .navigationTitle("Todo list")
             
-        }// end nav view
-        
-        
-        .toolbar {
-            Button("Add") {
-                showAlert = true
-            }
+            .navigationBarItems(
+                leading: EditButton(),
+                trailing: Button("Add"){
+                    showAlert = true
+                })
+            
             .alert("Add to do", isPresented: $showAlert){
                 
                 TextField(TextfieldText, text: $TextfieldText)
@@ -52,13 +47,17 @@ struct ContentView: View {
                 Button("Cancel",action: {TextfieldText = ""})//Close alert
             }// end alert
             
-        } //end toolbar
+//            .toolbar {
+//     
+//            } //end toolbar
+            
+        }// end nav view
+        
+        
+    
         
     }//end body
-    
-    func deleteToDo (indexSet: IndexSet){
-        dataArray.remove(atOffsets: indexSet)
-    }
+
         
         
     }//end

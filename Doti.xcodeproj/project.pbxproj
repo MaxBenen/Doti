@@ -14,6 +14,7 @@
 		EE6090562AE81605009B8BB6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6090552AE81605009B8BB6 /* ContentView.swift */; };
 		EE6090582AE8160C009B8BB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE6090572AE8160C009B8BB6 /* Assets.xcassets */; };
 		EE60905B2AE8160C009B8BB6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE60905A2AE8160C009B8BB6 /* Preview Assets.xcassets */; };
+		EED7E7B42B0E17C000CCEB2E /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED7E7B32B0E17C000CCEB2E /* ListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		EE6090552AE81605009B8BB6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EE6090572AE8160C009B8BB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE60905A2AE8160C009B8BB6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EED7E7B32B0E17C000CCEB2E /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			children = (
 				EE6090532AE81605009B8BB6 /* DotiApp.swift */,
 				EE39C7642B04F23A00707BDC /* Models  */,
+				EED7E7B22B0E15B100CCEB2E /* ViewModels */,
 				EE39C75B2B04E5D200707BDC /* Views */,
 				EE6090572AE8160C009B8BB6 /* Assets.xcassets */,
 				EE6090592AE8160C009B8BB6 /* Preview Content */,
@@ -90,6 +93,14 @@
 				EE60905A2AE8160C009B8BB6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EED7E7B22B0E15B100CCEB2E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				EED7E7B32B0E17C000CCEB2E /* ListViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +178,7 @@
 				EE39C7662B04F25E00707BDC /* toDoModel.swift in Sources */,
 				EE6090542AE81605009B8BB6 /* DotiApp.swift in Sources */,
 				EE39C7632B04EF7600707BDC /* ListRowView.swift in Sources */,
+				EED7E7B42B0E17C000CCEB2E /* ListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
