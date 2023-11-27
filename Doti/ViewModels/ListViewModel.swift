@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ListViewModel: ObservableObject{
+class ListViewModel: ObservableObject {
     
     @Published var dataArray: [toDoModel] = []
     

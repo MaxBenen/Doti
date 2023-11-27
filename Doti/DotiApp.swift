@@ -20,11 +20,16 @@ VIEWMODEL- manges models for views
 struct DotiApp: App {
     
    @StateObject var listViewModel: ListViewModel = ListViewModel()
+    
     var body: some Scene {
         WindowGroup {
             
-                ContentView()
+                
+                
+           ContentView()
+                
+    .environmentObject(listViewModel)
+            
         }
-        .environmentObject(listViewModel)
     }
 }

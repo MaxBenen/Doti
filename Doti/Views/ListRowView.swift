@@ -28,7 +28,6 @@ var data1 = toDoModel(toDoTitle: "First todo", ToDoDone: true)
 var data2 = toDoModel(toDoTitle: "First todo2", ToDoDone: false)
 #Preview {
     
-    
     Group{
         ListRowView(data: data1)
         ListRowView(data: data2)

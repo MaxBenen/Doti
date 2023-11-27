@@ -7,17 +7,13 @@
 
 import SwiftUI
 
-
-
 struct ContentView: View {
     
-    @Environment var listViewModel: ListViewModel
+   @EnvironmentObject var listViewModel: ListViewModel
     
     @State var TextfieldText: String = ""
     @State var showAlert: Bool = false
-    
-    
-    
+
     var body: some View {
         
         NavigationView{
@@ -46,31 +42,18 @@ struct ContentView: View {
                 Button("Save",action: { })//Action apppend to  list and show on screen vertical stacked
                 Button("Cancel",action: {TextfieldText = ""})//Close alert
             }// end alert
-            
-//            .toolbar {
-//     
-//            } //end toolbar
-            
-        }// end nav view
-        
-        
-    
-        
-    }//end body
 
-        
+        }// end nav view
+       
+    }//end body
         
     }//end
-    
-    
-
-    
-    
-
-    
 
 #Preview {
+
     ContentView()
+        .environmentObject(ListViewModel())
+        
 }
 
 
