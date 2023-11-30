@@ -22,6 +22,12 @@ struct ContentView: View {
             List{
                 ForEach(listViewModel.dataArray){ data in
                     ListRowView(data: data)
+                        .onTapGesture {
+                            withAnimation(.linear){
+                                listViewModel.updateItem(item: data)
+                            }
+                        }
+
                 }
                 .onDelete(perform: listViewModel.deleteToDo)
                 .onMove(perform: listViewModel.moveItem)
@@ -39,13 +45,18 @@ struct ContentView: View {
                 
                 TextField(TextfieldText, text: $TextfieldText)
                 
-                Button("Save",action: { })//Action apppend to  list and show on screen vertical stacked
+                Button("Save",action:{ saveButtonPressed() })
+                
                 Button("Cancel",action: {TextfieldText = ""})//Close alert
             }// end alert
 
         }// end nav view
        
     }//end body
+    
+    func saveButtonPressed() {
+        listViewModel.addItem(title: TextfieldText)
+    }
         
     }//end
 

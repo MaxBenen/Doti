@@ -8,7 +8,17 @@
 import Foundation
 
 struct toDoModel: Identifiable{
-    let id: String = UUID().uuidString
+    let id: String
     let toDoTitle: String
     let ToDoDone: Bool
+    
+    init(id: String = UUID().uuidString, toDoTitle: String, ToDoDone: Bool) {
+        self.id = id
+        self.toDoTitle = toDoTitle
+        self.ToDoDone = ToDoDone
+    }
+    
+    func updateCompletion() -> toDoModel{
+        return toDoModel(id: id, toDoTitle: toDoTitle, ToDoDone: !ToDoDone)
+    }
 }

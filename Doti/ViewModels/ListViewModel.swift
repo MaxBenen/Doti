@@ -30,4 +30,17 @@ class ListViewModel: ObservableObject {
     func moveItem(from: IndexSet, to: Int){
         dataArray.move(fromOffsets: from, toOffset: to)
     }
+    
+    func addItem(title: String){
+        let newItem = toDoModel(toDoTitle: title, ToDoDone: false)
+        dataArray.append(newItem)
+    }
+    
+    func updateItem(item: toDoModel){
+        
+        if let index = dataArray.firstIndex(where: { $0.id == item.id }){
+            dataArray[index] = item.updateCompletion()
+        }
+    }
+
 }
