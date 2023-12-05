@@ -17,21 +17,27 @@ struct ContentView: View {
     var body: some View {
         
         NavigationView{
-            
-            
-            List{
-                ForEach(listViewModel.dataArray){ data in
-                    ListRowView(data: data)
-                        .onTapGesture {
-                            withAnimation(.linear){
-                                listViewModel.updateItem(item: data)
-                            }
-                        }
+            ZStack{
+                if listViewModel.dataArray.isEmpty{
+                    Text("No items")
+                } else {
+                    List{
+                        ForEach(listViewModel.dataArray){ data in
+                            ListRowView(data: data)
+                                .onTapGesture {
+                                    withAnimation(.linear){
+                                        listViewModel.updateItem(item: data)
+                                    }
+                                }
 
+                        }
+                        .onDelete(perform: listViewModel.deleteToDo)
+                        .onMove(perform: listViewModel.moveItem)
+                    }// end list
                 }
-                .onDelete(perform: listViewModel.deleteToDo)
-                .onMove(perform: listViewModel.moveItem)
-            }// end list
+            }
+            
+
             
             .navigationTitle("Todo list")
             
