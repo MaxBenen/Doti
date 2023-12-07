@@ -34,6 +34,10 @@ struct ContentView: View {
                         .onDelete(perform: listViewModel.deleteToDo)
                         .onMove(perform: listViewModel.moveItem)
                     }// end list
+                    .scrollContentBackground(.hidden)
+                    .background(.white)
+                    
+                    
                 }
             }
             
@@ -57,6 +61,7 @@ struct ContentView: View {
             }// end alert
 
         }// end nav view
+        .navigationViewStyle(StackNavigationViewStyle())
        
     }//end body
     
