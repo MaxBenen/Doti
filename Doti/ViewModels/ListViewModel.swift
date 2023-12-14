@@ -37,10 +37,15 @@ class ListViewModel: ObservableObject {
     }
     
     func updateItem(item: toDoModel){
-        
-        if let index = dataArray.firstIndex(where: { $0.id == item.id }){
-            dataArray[index] = item.updateCompletion()
+        if let index = dataArray.firstIndex(where: { $0.id == item.id }) {
+            let updatedItem = item.updateCompletion()
+
+            if updatedItem.ToDoDone {
+                dataArray.remove(at: index)
+                dataArray.append(updatedItem)
+            } else {
+                dataArray[index] = updatedItem
+            }
         }
     }
-
 }
