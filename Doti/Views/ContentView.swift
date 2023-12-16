@@ -36,20 +36,22 @@ struct ContentView: View {
                     }// end list
                     .scrollContentBackground(.hidden)
                     .background(.white)
-                    
+                    //Image(systemName: "plus.circle.fill")
                     
                 }
             }
             
 
             
-            .navigationTitle("Todo list")
+            .navigationTitle("To do list")
             
             .navigationBarItems(
                 leading: EditButton(),
-                trailing: Button("Add"){
+                trailing: Button("Add", systemImage: "plus.circle.fill"){
                     showAlert = true
+                    
                 })
+            
             
             .alert("Add to do", isPresented: $showAlert){
                 
